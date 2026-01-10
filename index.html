@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track YouTube Video Time</title>
+    <script>
+      let player;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('videoPlayer', {
+          height: '390',
+          width: '640',
+          videoId:
+            'https://youtu.be/GNmz5dYjdcQ?list=PL0Zuz27SZ-6Mx9fd9elt80G1bPcySmWit&t=281', // Replace with dynamic video ID
+          events: {
+            onStateChange: trackTime,
+          },
+        });
+      }
+
+      function trackTime(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+          setInterval(() => {
+            const currentTime = Math.floor(player.getCurrentTime());
+            document.getElementById(
+              'videoLink'
+            ).value = `https://youtu.be/GNmz5dYjdcQ?list=PL0Zuz27SZ-6Mx9fd9elt80G1bPcySmWit&t=281`;
+          }, 1000);
+        }
+      }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </head>
+  <body>
+    <h2>Track YouTube Video Time</h2>
+    <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
+    <br />
+    <input type="text" id="videoLink" readonly />
+  </body>
+</html>

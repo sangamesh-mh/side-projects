@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Chappity//UPI Rotation Reminder//EN
+BEGIN:VEVENT
+UID:upi-rotation-20251110162035@chappity
+DTSTAMP:20251110T162035
+DTSTART:20251201T090000
+SUMMARY:Switch UPI & Bank Accounts – Monthly Rotation
+RRULE:FREQ=MONTHLY;BYMONTHDAY=1
+DESCRIPTION:Monthly reminder to switch UPI apps and bank accounts. Make at least one small transaction from a different bank to keep accounts active.
+END:VEVENT
+END:VCALENDAR
